@@ -24,10 +24,16 @@ package body playWithArrays with SPARK_Mode is
 
    function playArrayResultInverse (Table: T_Table) return T_Table is
       res : T_Table (Table'Range) := (0 => 0, others => 0);
+      tamVec : Natural := Table'Last - Table'First;
    begin
-      for J in Table'Last .. Table'First loop
-         res(J) := Table(J);
+      for J in 0 .. tamVec loop
+         res(J) := Table(Table'Last - J);
       end loop;
       return res;
    end playArrayResultInverse;
+
+
+
+
+
 end playWithArrays;
