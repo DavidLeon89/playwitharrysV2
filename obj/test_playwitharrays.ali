@@ -18,7 +18,7 @@ RV NO_SECONDARY_STACK
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U test_playwitharrays%b	test_playwitharrays.adb	2f68004a NE OO SU IL
+U test_playwitharrays%b	test_playwitharrays.adb	588939e5 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -35,7 +35,7 @@ D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
-D playwitharrays.ads	20181016175354 234185dc playwitharrays%s
+D playwitharrays.ads	20181017125922 2e568057 playwitharrays%s
 D system.ads		20180524051738 32a08138 system%s
 D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
 D s-exctab.ads		20180524051738 54135002 system.exception_table%s
@@ -50,27 +50,32 @@ D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
 D test_assertions.ads	20180930163718 1487d8c5 test_assertions%s
-D test_playwitharrays.adb  20181016184004 90b3ee09 test_playwitharrays%b
+D test_playwitharrays.adb  20181017132728 ea45d22d test_playwitharrays%b
 X 1 ada.ads
 16K9*Ada 20e8 25|4r6 4r27
 X 6 a-textio.ads
 49K13*Text_IO 471e16 25|4w10 4r31
-263U14*Put_Line 25|33s10 36s10 42s4
+263U14*Put_Line 25|51s10 53s10 59s4
 X 10 playwitharrays.ads
-1K9*playWithArrays 14e19 25|6w6 6r31
-2A9*T_Table(integer)<integer> 25|13r16 14r16 27r16
+1K9*playWithArrays 29e19 25|6w6 6r31
+2A9*T_Table(integer)<integer> 25|13r16 14r16 25r16 26r16 41r16 42r16
 4V13*play{2A9} 25|17s20
-10V13*playArrayResultInverse{2A9} 25|29s20
+13V13*playInverse{2A9} 25|28s20
+21V13*playArrayResultInverse{2A9} 25|46s20
 X 24 test_assertions.ads
 3K9*Test_Assertions 18e20 25|5w6 5r27
-4X4*Test_Assertion_Error 25|32r12
-12U14*Assert_True 25|17s7 29s7
+4X4*Test_Assertion_Error 25|50r12
+12U14*Assert_True 25|17s7 28s7 46s7
 X 25 test_playwitharrays.adb
-10U11*test_playwitharrays 10b11 46l5 46t24
-12U14 Test_1 12b14 21l8 21t14 43s4
+10U11*test_playwitharrays 10b11 64l5 64t24
+12U14 Test_play 12b14 21l8 21t17 60s4
 13a7 Table1{10|2A9} 17r26
 14a7 Table2{10|2A9} 17r34
-25U14 Test_2 25b14 37l8 37t14 44s4
-26a7 Msg{string} 29r61 33r20 36r20
-27a7 Table1{10|2A9} 29r44
+24U16 Test_playInverse 24b16 32l10 32t26 61s4
+25a7 Table1{10|2A9} 28r33
+26a7 Table2{10|2A9} 28r41
+39U14 Test_playArrayResultInverse 39b14 54l8 54t35 62s4
+40a7 Msg{string} 46r73 51r20 53r20
+41a7 Table1{10|2A9} 46r44
+42a7 Table2{10|2A9} 46r52
 

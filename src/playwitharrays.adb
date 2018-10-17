@@ -1,3 +1,5 @@
+with Ada.Text_IO;     use Ada.Text_IO;
+
 package body playWithArrays with SPARK_Mode is
 
    function play (Table: T_Table; Table_2: T_Table) return T_Table is
@@ -22,18 +24,21 @@ package body playWithArrays with SPARK_Mode is
       return play(Table_2,Table);
    end playInverse;
 
-   function playArrayResultInverse (Table: T_Table) return T_Table is
-      res : T_Table (Table'Range) := (0 => 0, others => 0);
-      tamVec : Natural := Table'Last - Table'First;
+   function playArrayResultInverse (Table: T_Table; Table_2: T_Table) return T_Table is
+      res : T_Table := play(Table,Table_2);
+      tamRes : Natural := res'Last - res'First;
+      def : T_Table (0..(Table'Last - Table'First)) := (others => 0);
+      tamDef : Natural := def'Last - def'First;
+
    begin
-      for J in 0 .. tamVec loop
-         res(J) := Table(Table'Last - J);
-      end loop;
-      return res;
+      Put_Line(tamRes'img & "joder" & tamDef'img);
+      if tamRes = tamDef then
+         for J in def'Range loop
+            pragma Loop_Invariant (J>=0);
+            def(def'Last - J) := res(J);
+         end loop;
+      end if;
+      return def;
    end playArrayResultInverse;
-
-
-
-
 
 end playWithArrays;

@@ -1,0 +1,7 @@
+playwitharrays.adb:29:36: medium: range check might fail (e.g. when tamRes = 0)[#1]
+playwitharrays.adb:29:36: medium: overflow check might fail (e.g. when res'First = 2147483647 and res'Last = -2 and tamRes = 0)[#2]
+playwitharrays.adb:34:07: warning: no Global contract available for "Put_Line"
+playwitharrays.adb:34:07: warning: assuming "Put_Line" has no effect on global items
+playwitharrays.adb:34:27: low: range check might fail (e.g. when tamRes = 0)[#0]
+playwitharrays.adb:34:37: low: range check might fail (e.g. when tamDef = 0)[#3]
+playwitharrays.adb:38:38: medium: array index check might fail (e.g. when J = 0 and def = (others => 1) and res'First = 1)[#4]

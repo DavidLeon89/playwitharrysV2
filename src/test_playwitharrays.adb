@@ -9,7 +9,7 @@ with playWithArrays;      use playWithArrays;
 
 procedure test_playwitharrays is
 
-   procedure Test_1 is
+   procedure Test_play is
       Table1 : T_Table (1 .. 5) := (1, 2, 3, 4, 5);
       Table2 : T_Table (1 .. 5) := (5, 4, 3, 2, 1);
 
@@ -18,30 +18,48 @@ procedure test_playwitharrays is
    exception
       when others =>
          null;
-   end Test_1;
+   end Test_play;
 
 
-
-   procedure Test_2 is
-      Msg   : constant String := "PlayArrayResultInverse: Positive vector";
-      Table1 : T_Table (1 .. 2) := (1,3);
+     procedure Test_playInverse is
+      Table1 : T_Table (1 .. 5) := (1, 2, 3, 4, 5);
+      Table2 : T_Table (1 .. 5) := (5, 4, 3, 2, 1);
    begin
-      Assert_True (playArrayResultInverse (Table1) = (3,1), Msg);
+      Assert_True (playInverse (Table1, Table2) = (5,2,3,4,1), "playInverse: Positive vector");
+   exception
+      when others =>
+         null;
+     end Test_playInverse;
+
+
+
+
+
+
+   procedure Test_playArrayResultInverse is
+      Msg   : constant String := "PlayArrayResultInverse: Positive vector";
+      Table1 : T_Table (1 .. 3) := (1, 2, 3);
+      Table2 : T_Table (1 .. 3) := (99, 100, 101);
+      --T_Table : T_Table;
+   begin
+      --T_Table :=
+      Assert_True (playArrayResultInverse (Table1, Table2) = (3,100,1), Msg);
+      --Put_Line ((playArrayResultInverse (Table1, Table2))(1)'Img);
 
    exception
       when Test_Assertion_Error =>
          Put_Line (Msg & " Failed (assertion)");
       when others =>
-         --entra aqui!!!!!
          Put_Line (Msg & " Failed (exception)");
-   end Test_2;
+   end Test_playArrayResultInverse;
 
 
 
 begin
    Put_Line ("********************* Test_playwitharrays");
-   Test_1;
-   Test_2;
+   Test_play;
+   Test_playInverse;
+   Test_playArrayResultInverse;
 
 end test_playwitharrays;
 

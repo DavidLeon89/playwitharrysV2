@@ -3,12 +3,27 @@ package playWithArrays with SPARK_Mode is
 
    function play (Table: T_Table; Table_2: T_Table) return T_Table
      with
-       Pre => Table'Length > 0 and Table_2'Length > 0;
+       Pre => Table'Length > 0 and
+       Table_2'Length > 0 and
+       Table'Length = Table_2'Length
+
+
+   ;
+
    function playInverse (Table: T_Table; Table_2: T_Table) return T_Table
    with
-       Pre => Table'Length > 0 and Table_2'Length > 0;
-   function playArrayResultInverse (Table: T_Table) return T_Table
+       Pre => Table'Length > 0 and
+       Table_2'Length > 0 and
+       Table'Length = Table_2'Length
+   ;
+
+
+   function playArrayResultInverse (Table: T_Table; Table_2: T_Table) return T_Table
    with
-       Pre => True;
+       Pre => Table'Length > 0 and
+       Table_2'Length > 0 and
+       Table'Length = Table_2'Length
+
+   ;
 
 end playWithArrays;
