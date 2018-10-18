@@ -3,9 +3,13 @@ package playWithArrays with SPARK_Mode is
 
    function play (Table: T_Table; Table_2: T_Table) return T_Table
      with
+       Global  => null,
+       --Depends => ...,
+
        Pre => Table'Length > 0 and
        Table_2'Length > 0 and
        Table'Length = Table_2'Length
+
 
 
    ;
